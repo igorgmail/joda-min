@@ -13,14 +13,14 @@ app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', async (req, res) => {
-  res.send('/go/500  <--  количество лайков' );
+  res.send('/go/500/  <--  количество лайков / Задержка от / до  -- в секундах');
 });
 
-app.get('/go/:amount', async (req, res) => {
-  const {amount} =  req.params
-  res.send({ 'status': 200, 'Будет поставлено лайков': amount});
-  console.log("Start go", amount);
-  const result = await start(amount)
+app.get('/go/:amount/:run?/:stop?', async (req, res) => {
+  const param = req.params
+  res.send(`Будет поставлено лайков: ${param.amount} <br> Задержка по умолчанию от ${param.run || 0.5} до ${param.stop || 1.5}`);
+  console.log("Start go", param.amount);
+  const result = await start(param.amount)
   console.log("▶ ⇛ result:", result);
 });
 
