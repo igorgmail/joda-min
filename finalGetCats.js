@@ -37,6 +37,7 @@ async function getCoockies(){
 // }
 resultArray.sort((a, b) => b.like - a.like)
 console.log("▶ ⇛ resultArray:", resultArray);
+  console.log("Время запроса", new Date().toTimeString());
 
   return resultArray
 }

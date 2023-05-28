@@ -39,9 +39,11 @@ async function getCoockies() {
     stop = 1.5
 
 
-async function start(amount) {
-  const timeAut = () => Math.floor(Math.random() * ((stop * 1000) - (run * 1000) + 1)) + (run * 1000)// Задержка
-  for (let i = 0; i < amount; i++) {
+async function start(params) {
+  let secOt = params.run || run
+  let secDo = params.stop || stop
+  const timeAut = () => Math.floor(Math.random() * ((secDo * 1000) - (secOt * 1000) + 1)) + (secOt * 1000)// Задержка
+  for (let i = 0; i < params.amount; i++) {
     await new Promise((r) => setTimeout(r, timeAut()));
     const result = await like()
   }
