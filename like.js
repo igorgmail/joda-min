@@ -36,7 +36,7 @@ async function getCoockies() {
 
   // Секунды
  let run = 0.5,
-    stop = 1.5
+   stop = 1
 
 
 async function start(params) {
@@ -64,7 +64,7 @@ async function like() {
       headers: randomHeaders,
       body: JSON.stringify({
         _token: token,
-        id: '1652',
+        id: '487',
       }),
       redirect: 'follow'
     });
