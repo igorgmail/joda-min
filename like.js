@@ -64,7 +64,7 @@ async function like() {
       headers: randomHeaders,
       body: JSON.stringify({
         _token: token,
-        id: '487',
+        id: '1652',
       }),
       redirect: 'follow'
     });
